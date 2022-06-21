@@ -43,10 +43,12 @@ Thus, ICLand aims to power the IC’s tokenized communities given the lack of se
 - Has an actor that handles 2 HashMap databases, one for the guild and one for the users. Both databases have methods to create, update, find, and findAll records.
 - In the future, these canisters will verify if NFT project admins own the required NFTs to integrate ICLand to their servers
 
-**- Frontend Canister** - Written in Nextjs with Typescript - UI that allow:
+**- Frontend Canister**
 
-- users to connect their wallets and Discord accounts to ICLand
-- project leaders to connect their wallets and Discord accounts to ICLand.
+- Written in Nextjs with Typescript
+- UI that allows:
+  - users to connect their wallets and Discord accounts to ICLand
+  - project leaders to connect their wallets and Discord accounts to ICLand.
 
 ## Challenges we ran into
 
