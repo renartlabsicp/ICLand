@@ -76,11 +76,14 @@ Governance/polling platforms;
 
 ## Getting Started
 
-First, run the development server:
+If testing locally, adjust the environment variables accordingly.
+
+Next:
 
 ```bash
-npm run dev
-# or
+dfx start
+dfx canister create —all
+dfx deploy
 yarn dev
 ```
 
