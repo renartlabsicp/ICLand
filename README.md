@@ -31,9 +31,17 @@ Thus, ICLand aims to power the IC’s tokenized communities given the lack of se
 
 ## How we built it
 
-**- Server** - Written in Typescript - Hosts Discord Bot that handle users authentication, assigns special roles to holders, and collect and share market activity data of their collections’ tokens through channels - API to integrate the functionalities between the dapp and the Discord bot
+**- Server**
 
-**- Backend Canister** - Written in Motoko - Has an actor that handles 2 HashMap databases, one for the guild and one for the users. Both databases have methods to create, update, find, and findAll records. - In the future, these canisters will verify if NFT project admins own the required NFTs to integrate ICLand to their servers
+- Written in Typescript
+- Hosts Discord Bot that handle users authentication, assigns special roles to holders, and collect and share market activity data of their collections’ tokens through channels
+- API to integrate the functionalities between the dapp and the Discord bot
+
+**- Backend Canister**
+
+- Written in Motoko
+- Has an actor that handles 2 HashMap databases, one for the guild and one for the users. Both databases have methods to create, update, find, and findAll records.
+- In the future, these canisters will verify if NFT project admins own the required NFTs to integrate ICLand to their servers
 
 **- Frontend Canister** - Written in Nextjs with Typescript - UI that allow:
 
