@@ -8,16 +8,9 @@ const payments = [
     id: 1,
     title: 'SECRET NFT',
     imageSrc: '/images/nft.png',
-    description: 'All tools will be enabled for  as long as you hold one or more these secret NFTs',
+    description: 'All tools will be enabled for  as long as you hold one or more of these secret NFTs',
   },
 ]
-
-function shortPrincipal(principal: string | Principal) {
-  const parts = (
-    typeof principal === "string" ? principal : principal.toText()
-  ).split("-");
-  return `${parts[0]}...${parts.slice(-1)[0]}`;
-};
 
 interface IForms {
   discriminator: string;
@@ -42,7 +35,7 @@ export function Forms({ discriminator, username }) {
             <div className="m-4 flex justify-center">
               <div>
                 <h3 className="font-bold text-md text-white">
-                  HODL OUR {payments.title}
+                  OUR {payments.title}
                 </h3>
                 <p className="font-white text-md text-white my-2">{payments.description}</p>
               </div>
