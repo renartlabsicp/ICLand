@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "server": {
+      "main": "server/main.mo",
+      "type": "motoko"
+    },
+    "icland-app": {
+      "dependencies": ["server"],
+      "source": ["out"],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": ""
+    }
+  },
+  "dfx": "0.10.1",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}

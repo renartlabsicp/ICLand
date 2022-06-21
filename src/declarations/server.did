@@ -1,0 +1,29 @@
+type UserId__1 = text;
+type UserId = text;
+type User = 
+ record {
+   discordId: int;
+   id: UserId;
+   isActive: bool;
+ };
+type GuildId__1 = text;
+type GuildId = text;
+type Guild = 
+ record {
+   id: GuildId;
+   isActive: bool;
+   name: text;
+   nftCanisterId: text;
+   website: text;
+ };
+service : {
+  createGuild: (GuildId__1, Guild) -> ();
+  createUser: (UserId__1, User) -> ();
+  getAllGuilds: () -> (vec Guild) query;
+  getAllUsers: () -> (vec User) query;
+  getGuild: (GuildId__1) -> (Guild) query;
+  getUser: (UserId__1) -> (User) query;
+  healthcheck: () -> (bool);
+  updateGuild: (Guild) -> ();
+  updateUser: (User) -> ();
+}
