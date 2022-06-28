@@ -12,6 +12,13 @@ const payments = [
   },
 ]
 
+function shortPrincipal(principal: string | Principal) {
+  const parts = (
+    typeof principal === "string" ? principal : principal.toText()
+  ).split("-");
+  return `${parts[0]}...${parts.slice(-1)[0]}`;
+};
+
 interface IForms {
   discriminator: string;
   username: string;
@@ -22,7 +29,6 @@ export function Forms({ discriminator, username }) {
     state: { principal },
   } = useGlobalContext();
 
-  const walletAdress = principal?.toText();
   return (
     <>
 
@@ -46,7 +52,7 @@ export function Forms({ discriminator, username }) {
       <div className="flex flex-col justify-center items-center">
         <p className="text-white text-center text-lg ">
           Principal ID required to HODL our NFT:&nbsp;
-          <span className="text-pink-200">{walletAdress} <br /></span>
+          <span className="text-pink-200">{principal?.toText()} <br /></span>
         </p>
         <p className="text-white text-center text-lg ">
           Discord required to invite the ICLand bot:&nbsp;

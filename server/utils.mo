@@ -20,6 +20,8 @@ module {
           isActive = false;
           name = "";
           nftCanisterId = "";
+          nftStandard = "";
+          owner = "";
           website = "";
         }
       };
@@ -34,7 +36,7 @@ module {
         {
           id = userId;
           isActive = false;
-          discordId = 0;
+          discordId = "";
         }
       };
     };

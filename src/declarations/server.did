@@ -2,7 +2,7 @@ type UserId__1 = text;
 type UserId = text;
 type User = 
  record {
-   discordId: int;
+   discordId: text;
    id: UserId;
    isActive: bool;
  };
@@ -14,6 +14,8 @@ type Guild =
    isActive: bool;
    name: text;
    nftCanisterId: text;
+   nftStandard: text;
+   owner: text;
    website: text;
  };
 service : {

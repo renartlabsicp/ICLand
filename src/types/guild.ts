@@ -3,5 +3,7 @@ export interface Guild {
   isActive: boolean;
   name: string;
   nftCanisterId: string;
+  nftStandard: string;
+  owner: string;
   website: string;
 }

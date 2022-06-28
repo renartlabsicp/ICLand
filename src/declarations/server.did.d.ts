@@ -3,7 +3,9 @@ import type { ActorMethod } from '@dfinity/agent';
 
 export interface Guild {
   'id' : GuildId,
+  'owner' : string,
   'name' : string,
+  'nftStandard' : string,
   'isActive' : boolean,
   'website' : string,
   'nftCanisterId' : string,
@@ -12,7 +14,7 @@ export type GuildId = string;
 export type GuildId__1 = string;
 export interface User {
   'id' : UserId,
-  'discordId' : bigint,
+  'discordId' : string,
   'isActive' : boolean,
 }
 export type UserId = string;

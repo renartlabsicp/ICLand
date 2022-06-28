@@ -8,6 +8,8 @@ module {
     isActive: Bool;
     name: Text;
     nftCanisterId: Text;
+    nftStandard: Text;
+    owner: Text;
     website: Text;
   };
 
@@ -16,6 +18,6 @@ module {
   public type User = {
     id: UserId;
     isActive: Bool;
-    discordId: Int;
+    discordId: Text;
   };
 };

@@ -28,8 +28,13 @@ module.exports = {
         '400': '#3C3945',
         '500': '#CFCFCF'
       },
+      'transparent': 'transparent'
     },
-    extend: {},
+    extend: {
+      animation: {
+        'spin-slow': 'spin 2s linear infinite',
+      }
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),

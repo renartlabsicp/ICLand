@@ -3,7 +3,9 @@ export const idlFactory = ({ IDL }) => {
   const GuildId = IDL.Text;
   const Guild = IDL.Record({
     'id' : GuildId,
+    'owner' : IDL.Text,
     'name' : IDL.Text,
+    'nftStandard' : IDL.Text,
     'isActive' : IDL.Bool,
     'website' : IDL.Text,
     'nftCanisterId' : IDL.Text,
@@ -12,7 +14,7 @@ export const idlFactory = ({ IDL }) => {
   const UserId = IDL.Text;
   const User = IDL.Record({
     'id' : UserId,
-    'discordId' : IDL.Int,
+    'discordId' : IDL.Text,
     'isActive' : IDL.Bool,
   });
   return IDL.Service({

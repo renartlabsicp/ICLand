@@ -1,8 +1,8 @@
 import { HttpAgent } from "@dfinity/agent";
 
 export const HOST =
-  process.env.NEXT_PUBLIC_DFX_NETWORK === "local"
-    ? "http://127.0.0.1:8000"
+  process.env.DFX_NETWORK === "local"
+    ? "http://localhost:8000"
     : "https://ic0.app";
 
 export const IDENTITY_PROVIDER = process.env.IDENTITY_CANISTER_ID

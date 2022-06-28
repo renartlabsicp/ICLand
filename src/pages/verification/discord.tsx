@@ -5,66 +5,38 @@ import { Footer } from "../../components/Footer";
 import { HeaderConnect } from "../../components/HeaderConnected";
 import { useActor } from "../../context/actor";
 import { User } from "../../types/user";
-import { useGlobalContext, useSetAgent } from "../../hooks";
-import { HOST } from "../../lib/canisters";
+import { useGlobalContext } from "../../hooks";
 import { getDiscordTokens } from "../../lib/getDiscordTokens";
 import { useRouter } from "next/router";
 
-const WHITELIST = [].filter(Boolean);
-
-const PLUG_ARGS = {
-  whitelist: WHITELIST,
-  host: HOST,
-};
 
 export default function Connect() {
   const router = useRouter()
   const { query } = router
-  const setAgent = useSetAgent()
   const { state: { isAuthed, principal } } = useGlobalContext()
   const { createUser } = useActor()
   const [user, setUser] = useState<any>()
   const [isLoading, setIsLoading] = useState<boolean>(!!user)
 
-  const handleReconnect = async () => {
-    if (typeof window === "undefined") return;
-
-    const connected = await window.ic.plug.isConnected();
-
-    if (!connected) {
-      await window.ic.plug.requestConnect(PLUG_ARGS);
-    }
-    if (!window.ic.plug.agent) {
-      await window.ic.plug.createAgent(PLUG_ARGS);
-    }
-
-    setAgent({
-      agent: window.ic.plug.agent,
-      isAuthed: true,
-    });
-  }
-
   const registerUser = async () => {
     const userData: User = {
       id: principal.toString(),
       isActive: true,
-      discordId: Number(user.id),
+      discordId: user.id,
     }
 
-    // const resp = await createUser(userData)
-    if (true) {
-      axios.post(`${process.env.NEXT_PUBLIC_DISCORD_API}user`, user, {
+    const resp = await createUser(userData)
+    if (resp) {
+      axios.post(`${process.env.NEXT_PUBLIC_DISCORD_API}user`, userData, {
         headers: {
           "Content-Type": "application/json"
         }
       })
+    } else {
+      console.log("Something went wrong")
     }
   }
-
-  useEffect(() => {
-    handleReconnect()
-  }, [])
-
+  
   useEffect(() => {
     const { code } = query
     if (!code) return
