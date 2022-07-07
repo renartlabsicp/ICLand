@@ -206,14 +206,6 @@ export default function LoginButton() {
           {showStoicLogin && (
             <div className="text-sm">
               Stoic requires third-party cookies to connect.
-              <ul className="list-disc mt-2 pl-5">
-                <li>
-                  <strong>Brave</strong> — Disable shields for btcflower.xyz
-                </li>
-                <li>
-                  <strong>Safari</strong> — Enable cross-site tracking
-                </li>
-              </ul>
               <div className="flex mt-4 gap-2 leading-none">
                 <button
                   className="flex-1 px-3 py-2 rounded-lg bg-gray-200 border-gray-300 border-2 hover:ring-2 hover:ring-opacity-50 hover:ring-indigo-500 hover:border-indigo-500"
